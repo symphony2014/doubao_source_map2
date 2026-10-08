@@ -1,0 +1,151 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed variable 'i' to 'reactCoreLibraryReexport'
+// - Resolved require(634663) to 'react-core-library-reexport'
+// - Renamed variable 'r' to 'chatSkillModels'
+// - Resolved require(53859) to 'chat-skill-models'
+// - Renamed variable 'o' to 'aiSkillConstants_1'
+// - Resolved require(156330) to 'ai-skill-constants_1'
+// - Renamed variable 'a' to 'chatInputPlaceholderSelector'
+// - Resolved require(413435) to 'chat-input-placeholder-selector'
+// - Renamed variable 's' to 'chatAppEnums'
+// - Resolved require(299505) to 'chat-app-enums'
+// - Renamed variable 'l' to 'asyncRetryUtils'
+// - Resolved require(374795) to 'async-retry-utils'
+// - Resolved require.e(45281) to 'image-skill-chat-input'
+// - Resolved require.bind(968852) to 'image-skill-chat-input-new'
+// - Renamed variable 'd' to 'isStringTypeCheck'
+// - Resolved require(253558) to 'is-string-type-check'
+// - Renamed variable 'p' to 'chatFieldTypes'
+// - Resolved require(660462) to 'chat-field-types'
+// - Renamed variable 'f' to 'imageSkillStoreHook'
+// - Resolved require(310175) to 'image-skill-store-hook'
+// - Renamed variable 'h' to 'asyncSkillChatInput_3'
+// - Resolved require(362884) to 'async-skill-chat-input_3'
+// - Renamed variable 'v' to 'reactJsxRuntimeCoreReexport'
+// - Resolved require(917067) to 'react-jsx-runtime-core-reexport'
+// - Updated imported property 'AD' to 'retryWithFallback' (module 374795)
+// - Updated imported property 'y' to 'imageEditorManager' (module 362884)
+// - Updated imported property 'Z' to 'isString' (module 253558)
+// - Updated imported property 'W5' to 'initializeImageSkillStore' (module 310175)
+// - Updated imported property 'f' to 'getFieldTypes' (module 660462)
+// - Updated imported property 'H' to 'SkillDefinition' (module 53859)
+// - Updated imported property 'Y' to 'ChatInputPlaceholderSelector' (module 413435)
+// - Updated imported property 'l' to 'aiSkillConstants' (module 156330)
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: async-skill-chat-input.dc86588e.js
+         * chunkId: 1779
+         * moduleId: 253701
+         */
+module.exports = function (module, exports, require) {
+  var reactCoreLibraryReexport = require("react-core-library-reexport") /*id: 634663*/;
+  var chatSkillModels = require("chat-skill-models") /*id: 53859*/;
+  var aiSkillConstants_1 = require("ai-skill-constants_1") /*id: 156330*/;
+  var chatInputPlaceholderSelector = require("chat-input-placeholder-selector") /*id: 413435*/;
+  var chatAppEnums = require("chat-app-enums") /*id: 299505*/;
+  var asyncRetryUtils = require("async-retry-utils") /*id: 374795*/;
+  function u() {
+    return require.e("image-skill-chat-input") /*id: 45281*/.then(require.bind(require, "image-skill-chat-input-new") /*id: 968852*/);
+  }
+  let c = reactCoreLibraryReexport.lazy(() => asyncRetryUtils.retryWithFallback({
+    fn: () => u()
+  }));
+  var isStringTypeCheck = require("is-string-type-check") /*id: 253558*/;
+  var chatFieldTypes = require("chat-field-types") /*id: 660462*/;
+  var imageSkillStoreHook = require("image-skill-store-hook") /*id: 310175*/;
+  var asyncSkillChatInput_3 = require("async-skill-chat-input_3") /*id: 362884*/;
+  class m {
+    focusOnEditor() {
+      asyncSkillChatInput_3.imageEditorManager.focusOnImageEditor();
+    }
+    updateEditorValue(e) {
+      if (isStringTypeCheck.isString(e)) {
+        imageSkillStoreHook.initializeImageSkillStore().getState().updateEditorValue({
+          data: [{
+            type: chatFieldTypes.getFieldTypes.Text,
+            text: e
+          }]
+        });
+      } else {
+        imageSkillStoreHook.initializeImageSkillStore().getState().updateEditorValue(e);
+      }
+    }
+    clearEditorValue() {
+      this.updateEditorValue("");
+    }
+    getInputOptionsMap() {
+      let {
+        inputOptionsMap: e
+      } = imageSkillStoreHook.initializeImageSkillStore().getState();
+      return e;
+    }
+    initImageList() {
+      let {
+        initImageList: e
+      } = imageSkillStoreHook.initializeImageSkillStore().getState();
+      e();
+    }
+  }
+  var reactJsxRuntimeCoreReexport = require("react-jsx-runtime-core-reexport") /*id: 917067*/;
+  function g(e, t, n) {
+    var i;
+    if ((t = typeof (i = function (e, t) {
+      if (typeof e != "object" || !e) {
+        return e;
+      }
+      var n = e[Symbol.toPrimitive];
+      if (n !== undefined) {
+        var i = n.call(e, t || "default");
+        if (typeof i != "object") {
+          return i;
+        }
+        throw TypeError("@@toPrimitive must return a primitive value.");
+      }
+      return (t === "string" ? String : Number)(e);
+    }(t, "string")) == "symbol" ? i : i + "") in e) {
+      Object.defineProperty(e, t, {
+        value: n,
+        enumerable: true,
+        configurable: true,
+        writable: true
+      });
+    } else {
+      e[t] = n;
+    }
+    return e;
+  }
+  class y extends chatSkillModels.SkillDefinition {
+    focus() {
+      var e;
+      if ((e = this.ref.current) !== null && e !== undefined) {
+        e.focus();
+      }
+    }
+    render(e) {
+      return reactJsxRuntimeCoreReexport.jsx(reactCoreLibraryReexport.Suspense, {
+        fallback: reactJsxRuntimeCoreReexport.jsx(chatInputPlaceholderSelector.ChatInputPlaceholderSelector, {}),
+        children: reactJsxRuntimeCoreReexport.jsx(c, {
+          ref: this.ref,
+          ...e
+        })
+      });
+    }
+    preloadChunks() {
+      u();
+    }
+    constructor(...e) {
+      super(...e);
+      g(this, "skillType", chatAppEnums.SkillType.ImageGeneration);
+      g(this, "ref", reactCoreLibraryReexport.createRef());
+      g(this, "service", new m());
+    }
+  }
+  g(y, "pluginName", aiSkillConstants_1.aiSkillConstants.ImageGeneration);
+  require.r(exports);
+  require.d(exports, {
+    ImageCreationChatInputPlugin: function () {
+      return y;
+    }
+  });
+}

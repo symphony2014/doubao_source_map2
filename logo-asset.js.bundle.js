@@ -1,0 +1,2 @@
+(()=>{var r=(o,e)=>()=>(e||o((e={exports:{}}).exports,e),e.exports);var _=r((i,s)=>{s.exports=function(o,e,g){o.exports=g.p+"static/image/logo-icon-grey-bg.0ede126b.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["logo-asset",61823],{"logo-icon-grey-bg-asset":_(),101957:_()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/logo-asset.js.bundle.js.map

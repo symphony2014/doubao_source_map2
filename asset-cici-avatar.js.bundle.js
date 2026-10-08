@@ -1,0 +1,2 @@
+(()=>{var s=(_,a)=>()=>(a||_((a={exports:{}}).exports,a),a.exports);var e=s((c,t)=>{t.exports=function(_,a,i){_.exports=i.p+"static/image/cici_avatar.8bc8fb37.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["asset-cici-avatar",38478],{"cici-avatar-asset-path":e(),179057:e()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/asset-cici-avatar.js.bundle.js.map

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["static-image-asset/asset-remove-bg-image.js", "static-image-asset.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: 21740.309f665e.js\n         * chunkId: 21740\n         * moduleId: 619458\n         */\nmodule.exports = function (module, exports, require) {\n  module.exports = require.p + \"static/image/example-remove-bg.ee63add8.png\";\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['static-image-asset', 21740], {\n        \"asset-remove-bg-image\": require(\"./static-image-asset/asset-remove-bg-image.js\"),\n\"619458\": require(\"./static-image-asset/asset-remove-bg-image.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CAOAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnDD,EAAO,QAAUC,EAAQ,EAAI,6CAC/B,KCTC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,qBAAsB,KAAK,EAAG,CACvG,wBAAyB,IACjC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_asset_remove_bg_image", "__commonJSMin", "exports", "module", "require"]
+}

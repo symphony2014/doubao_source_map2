@@ -1,0 +1,2 @@
+(()=>{var s=(o,e)=>()=>(e||o((e={exports:{}}).exports,e),e.exports);var _=s((l,i)=>{i.exports=function(o,e,t){o.exports=t.p+"static/image/logo-icon-white-bg.72df0b1a.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["logo-icon-asset",49941],{"logo-icon-white-bg-path":_(),685324:_()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/logo-icon-asset.js.bundle.js.map

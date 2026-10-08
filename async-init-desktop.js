@@ -1,0 +1,27 @@
+(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['async-init-desktop', 41054], {
+        "indexeddb-data-access-wrapper": require("./async-init-desktop/indexeddb-data-access-wrapper.js"),
+"190352": require("./async-init-desktop/indexeddb-data-access-wrapper.js"),
+"shell-api-logging-utils": require("./async-init-desktop/shell-api-logging-utils.js"),
+"191846": require("./async-init-desktop/shell-api-logging-utils.js"),
+"neotix-shell-api-export-loader": require("./async-init-desktop/neotix-shell-api-export-loader.js"),
+"216482": require("./async-init-desktop/neotix-shell-api-export-loader.js"),
+"desktop-shell-api-integration": require("./async-init-desktop/desktop-shell-api-integration.js"),
+"340638": require("./async-init-desktop/desktop-shell-api-integration.js"),
+"ai-action-constants": require("./async-init-desktop/ai-action-constants.js"),
+"535829": require("./async-init-desktop/ai-action-constants.js"),
+"async-init-desktop_1": require("./async-init-desktop/async-init-desktop_1.js"),
+"536792": require("./async-init-desktop/async-init-desktop_1.js"),
+"resume-samantha-chat-task": require("./async-init-desktop/resume-samantha-chat-task.js"),
+"663494": require("./async-init-desktop/resume-samantha-chat-task.js"),
+"samantha-chat-task-storage": require("./async-init-desktop/samantha-chat-task-storage.js"),
+"692465": require("./async-init-desktop/samantha-chat-task-storage.js"),
+"popup-view-api-wrapper": require("./async-init-desktop/popup-view-api-wrapper.js"),
+"740037": require("./async-init-desktop/popup-view-api-wrapper.js"),
+"neotix-pin-window-api-wrapper": require("./async-init-desktop/neotix-pin-window-api-wrapper.js"),
+"774214": require("./async-init-desktop/neotix-pin-window-api-wrapper.js"),
+"neotix-channel-service": require("./async-init-desktop/neotix-channel-service.js"),
+"872542": require("./async-init-desktop/neotix-channel-service.js"),
+"runtime-storage-wrapper": require("./async-init-desktop/runtime-storage-wrapper.js"),
+"950108": require("./async-init-desktop/runtime-storage-wrapper.js")
+        }, null]);
+        

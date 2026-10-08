@@ -1,0 +1,2 @@
+(()=>{var _=(m,e)=>()=>(e||m((e={exports:{}}).exports,e),e.exports);var r=_((n,a)=>{a.exports=function(m,e,i){var s=i("mermaid-pie-langium-services");i("mermaid-langium-grammars"),i.d(e,{createPieServices:function(){return s.createPieServices}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["pie-chart-services",28467],{"mermaid-pie-langium-services_1":r(),638166:r()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/pie-chart-services.js.bundle.js.map

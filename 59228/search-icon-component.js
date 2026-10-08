@@ -1,0 +1,29 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'Z' to 'SearchIcon'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 18629.286ea62c.js
+         * chunkId: 18629
+         * moduleId: 879883
+         */
+module.exports = function (module, exports, require) {
+  var reactCoreLibraryReexport = require("react-core-library-reexport") /*id: 634663*/;
+  let a = require("icon-component-factory") /*id: 129581*/.IconFactory(function (e) {
+    return reactCoreLibraryReexport.createElement("svg", Object.assign({
+      viewBox: "0 0 24 24",
+      fill: "none",
+      xmlns: "http://www.w3.org/2000/svg",
+      width: "1em",
+      height: "1em",
+      focusable: false,
+      "aria-hidden": true
+    }, e), reactCoreLibraryReexport.createElement("path", {
+      fillRule: "evenodd",
+      clipRule: "evenodd",
+      d: "M10.5 2C5.80558 2 2 5.80558 2 10.5C2 15.1944 5.80558 19 10.5 19C12.3054 19 13.9794 18.4371 15.356 17.4773L19.4393 21.5606C20.0251 22.1464 20.9749 22.1464 21.5606 21.5606C22.1464 20.9749 22.1464 20.0251 21.5606 19.4393L17.4773 15.356C18.4371 13.9794 19 12.3054 19 10.5C19 5.80558 15.1944 2 10.5 2ZM5 10.5C5 7.46243 7.46243 5 10.5 5C13.5376 5 16 7.46243 16 10.5C16 13.5376 13.5376 16 10.5 16C7.46243 16 5 13.5376 5 10.5Z",
+      fill: "currentColor"
+    }));
+  }, "search");
+  exports.SearchIcon = a;
+}

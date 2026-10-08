@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["chat-ui-renderer.js"],
+  "sourcesContent": ["(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['chat-ui-renderer', obj/flow-doubao/doubao/chat/static/js/chat.dc7535d9.js], {\n        \n        }, null]);\n        "],
+  "mappings": "OAAC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,mBAAoB,IAAI,KAAK,OAAO,OAAO,KAAK,OAAO,GAAG,KAAK,SAAS,EAAE,EAAG,CAEtJ,EAAG,IAAI,CAAC",
+  "names": []
+}

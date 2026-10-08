@@ -1,0 +1,2 @@
+(()=>{var r=(s,e)=>()=>(e||s((e={exports:{}}).exports,e),e.exports);var _=r((p,t)=>{t.exports=function(s,e,a){s.exports=a.p+"static/image/example-remove-bg.ee63add8.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["static-image-asset",21740],{"asset-remove-bg-image":_(),619458:_()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/static-image-asset.js.bundle.js.map

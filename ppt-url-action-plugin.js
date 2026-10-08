@@ -1,0 +1,73 @@
+(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['ppt-url-action-plugin', 79068], {
+        "ppt-url-action-handler_1": require("./ppt-url-action-plugin/ppt-url-action-handler_1.js"),
+"139266": require("./ppt-url-action-plugin/ppt-url-action-handler_1.js"),
+"info-outlined-icon": require("./ppt-url-action-plugin/info-outlined-icon.js"),
+"154400": require("./ppt-url-action-plugin/info-outlined-icon.js"),
+"close-icon-button": require("./ppt-url-action-plugin/close-icon-button.js"),
+"195712": require("./ppt-url-action-plugin/close-icon-button.js"),
+"resize-observer-hooks": require("./ppt-url-action-plugin/resize-observer-hooks.js"),
+"246619": require("./ppt-url-action-plugin/resize-observer-hooks.js"),
+"close-icon-component_1_1": require("./ppt-url-action-plugin/close-icon-component_1_1.js"),
+"259726": require("./ppt-url-action-plugin/close-icon-component_1_1.js"),
+"samantha-button-component": require("./ppt-url-action-plugin/samantha-button-component.js"),
+"307533": require("./ppt-url-action-plugin/samantha-button-component.js"),
+"close-icon-component_1": require("./ppt-url-action-plugin/close-icon-component_1.js"),
+"315885": require("./ppt-url-action-plugin/close-icon-component_1.js"),
+"flow-account-service": require("./ppt-url-action-plugin/flow-account-service.js"),
+"317959": require("./ppt-url-action-plugin/flow-account-service.js"),
+"business-input-field": require("./ppt-url-action-plugin/business-input-field.js"),
+"324730": require("./ppt-url-action-plugin/business-input-field.js"),
+"svg-check-icon": require("./ppt-url-action-plugin/svg-check-icon.js"),
+"362340": require("./ppt-url-action-plugin/svg-check-icon.js"),
+"spinner-loading-export": require("./ppt-url-action-plugin/spinner-loading-export.js"),
+"372882": require("./ppt-url-action-plugin/spinner-loading-export.js"),
+"attachment-constants": require("./ppt-url-action-plugin/attachment-constants.js"),
+"373585": require("./ppt-url-action-plugin/attachment-constants.js"),
+"warning-icon": require("./ppt-url-action-plugin/warning-icon.js"),
+"385435": require("./ppt-url-action-plugin/warning-icon.js"),
+"dbx-dropdown-menu-components": require("./ppt-url-action-plugin/dbx-dropdown-menu-components.js"),
+"491728": require("./ppt-url-action-plugin/dbx-dropdown-menu-components.js"),
+"feishu-access-token-service": require("./ppt-url-action-plugin/feishu-access-token-service.js"),
+"578645": require("./ppt-url-action-plugin/feishu-access-token-service.js"),
+"react-check-circle-icon": require("./ppt-url-action-plugin/react-check-circle-icon.js"),
+"610937": require("./ppt-url-action-plugin/react-check-circle-icon.js"),
+"skill-message-lifecycle-types": require("./ppt-url-action-plugin/skill-message-lifecycle-types.js"),
+"617019": require("./ppt-url-action-plugin/skill-message-lifecycle-types.js"),
+"canvas-analytics-tracker": require("./ppt-url-action-plugin/canvas-analytics-tracker.js"),
+"619081": require("./ppt-url-action-plugin/canvas-analytics-tracker.js"),
+"dbx-sonner-toaster-wrapper": require("./ppt-url-action-plugin/dbx-sonner-toaster-wrapper.js"),
+"682910": require("./ppt-url-action-plugin/dbx-sonner-toaster-wrapper.js"),
+"samantha-dropdown-wrapper": require("./ppt-url-action-plugin/samantha-dropdown-wrapper.js"),
+"686264": require("./ppt-url-action-plugin/samantha-dropdown-wrapper.js"),
+"ppt-url-action-handler": require("./ppt-url-action-plugin/ppt-url-action-handler.js"),
+"710338": require("./ppt-url-action-plugin/ppt-url-action-handler.js"),
+"feishu-temp-config-loader": require("./ppt-url-action-plugin/feishu-temp-config-loader.js"),
+"767490": require("./ppt-url-action-plugin/feishu-temp-config-loader.js"),
+"toast-notification-helper": require("./ppt-url-action-plugin/toast-notification-helper.js"),
+"83051": require("./ppt-url-action-plugin/toast-notification-helper.js"),
+"right-outlined-icon": require("./ppt-url-action-plugin/right-outlined-icon.js"),
+"831095": require("./ppt-url-action-plugin/right-outlined-icon.js"),
+"app-identity-info": require("./ppt-url-action-plugin/app-identity-info.js"),
+"838408": require("./ppt-url-action-plugin/app-identity-info.js"),
+"chevron-right-icon_1": require("./ppt-url-action-plugin/chevron-right-icon_1.js"),
+"839336": require("./ppt-url-action-plugin/chevron-right-icon_1.js"),
+"flow-account-module": require("./ppt-url-action-plugin/flow-account-module.js"),
+"898004": require("./ppt-url-action-plugin/flow-account-module.js"),
+"use-smooth-text-hook": require("./ppt-url-action-plugin/use-smooth-text-hook.js"),
+"899617": require("./ppt-url-action-plugin/use-smooth-text-hook.js"),
+"close-circle-icon": require("./ppt-url-action-plugin/close-circle-icon.js"),
+"948124": require("./ppt-url-action-plugin/close-circle-icon.js"),
+"react-svg-icon_2": require("./ppt-url-action-plugin/react-svg-icon_2.js"),
+"975719": require("./ppt-url-action-plugin/react-svg-icon_2.js")
+        }, function (e) {
+  !function () {
+    if ("undefined" != typeof window) {
+      var e = {
+          warning: "\u62C9\u9ED1\u540E\u53CC\u65B9\u5C06\u65E0\u6CD5\u67E5\u770B\u5BF9\u65B9\u521B\u5EFA\u7684\u667A\u80FD\u4F53"
+        },
+        t = window.__i18n__ && window.__i18n__.instance;
+      t ? t.addResourceBundle("zh", "web", e, !0, !0) : (window.__i18n__ = window.__i18n__ || {}, window.__i18n__.queue = window.__i18n__.queue || {}, window.__i18n__.queue.zh = Object.assign(window.__i18n__.queue.zh || {}, e));
+    }
+  }();
+}]);
+        

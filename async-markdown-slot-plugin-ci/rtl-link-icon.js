@@ -1,0 +1,33 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'Z' to 'LinkIcon'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: async-skill-send-message-box.20dfaedc.js
+         * chunkId: 13146
+         * moduleId: 70222
+         */
+module.exports = function (module, exports, require) {
+  require("react-core-library-reexport") /*id: 634663*/;
+  var rtlIconFactory = require("rtl-icon-factory") /*id: 682145*/;
+  var reactJsxRuntimeCoreReexport = require("react-jsx-runtime-core-reexport") /*id: 917067*/;
+  var o = rtlIconFactory.createRtlIcon(reactJsxRuntimeCoreReexport.jsx(e => reactJsxRuntimeCoreReexport.jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1em",
+    height: "1em",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    ...e,
+    children: reactJsxRuntimeCoreReexport.jsx("path", {
+      fill: "currentColor",
+      fillRule: "evenodd",
+      d: "M20.22 3.78a6.076 6.076 0 0 0-8.592 0l-1.105 1.104A1.008 1.008 0 0 0 11.95 6.31l1.105-1.105a4.06 4.06 0 1 1 5.74 5.74l-1.177 1.179a1.008 1.008 0 0 0 1.426 1.425l1.178-1.177a6.076 6.076 0 0 0 0-8.592m-6.616 15.208a1.008 1.008 0 1 0-1.426-1.425l-1.232 1.232a4.059 4.059 0 1 1-5.74-5.74l1.159-1.16a1.008 1.008 0 0 0-1.426-1.426l-1.16 1.16a6.076 6.076 0 0 0 8.593 8.592zm-5.147-4.8a1.008 1.008 0 0 0 1.426 1.426l5.79-5.79a1.008 1.008 0 0 0-1.426-1.426z",
+      clipRule: "evenodd"
+    })
+  }), {}));
+  require.d(exports, {
+    LinkIcon: function () {
+      return o;
+    }
+  });
+}

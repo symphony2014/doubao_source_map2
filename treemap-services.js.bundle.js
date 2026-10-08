@@ -1,0 +1,2 @@
+(()=>{var m=(s,e)=>()=>(e||s((e={exports:{}}).exports,e),e.exports);var a=m((i,t)=>{t.exports=function(s,e,r){var c=r("treemap-language-services-factory");r("mermaid-langium-grammars"),r.d(e,{createTreemapServices:function(){return c.createTreemapServices}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["treemap-services",96779],{"treemap-language-services-reexport":a(),953005:a()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/treemap-services.js.bundle.js.map

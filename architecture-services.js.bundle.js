@@ -1,0 +1,2 @@
+(()=>{var a=(i,e)=>()=>(e||i((e={exports:{}}).exports,e),e.exports);var c=a((u,t)=>{t.exports=function(i,e,r){var s=r("mermaid-architecture-services");r("mermaid-langium-grammars"),r.d(e,{createArchitectureServices:function(){return s.createArchServices}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["architecture-services",93160],{"mermaid-architecture-services-exporter":c(),468403:c()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/architecture-services.js.bundle.js.map

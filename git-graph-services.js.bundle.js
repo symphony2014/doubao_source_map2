@@ -1,0 +1,2 @@
+(()=>{var s=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports);var i=s((g,t)=>{t.exports=function(a,e,r){var c=r("git-graph-service-factory");r("mermaid-langium-grammars"),r.d(e,{createGitGraphServices:function(){return c.createGitGraphServices}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["git-graph-services",52288],{"git-graph-services-module":i(),27435:i()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/git-graph-services.js.bundle.js.map

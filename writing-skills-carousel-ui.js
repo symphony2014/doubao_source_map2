@@ -1,0 +1,73 @@
+(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['writing-skills-carousel-ui', 42241], {
+        "react-deep-memo-hook": require("./writing-skills-carousel-ui/react-deep-memo-hook.js"),
+"196129": require("./writing-skills-carousel-ui/react-deep-memo-hook.js"),
+"conversation-message-utils-helper": require("./writing-skills-carousel-ui/conversation-message-utils-helper.js"),
+"218543": require("./writing-skills-carousel-ui/conversation-message-utils-helper.js"),
+"time-duration-util": require("./writing-skills-carousel-ui/time-duration-util.js"),
+"222924": require("./writing-skills-carousel-ui/time-duration-util.js"),
+"array-first-element": require("./writing-skills-carousel-ui/array-first-element.js"),
+"255519": require("./writing-skills-carousel-ui/array-first-element.js"),
+"writing-skill-config-hooks": require("./writing-skills-carousel-ui/writing-skill-config-hooks.js"),
+"276565": require("./writing-skills-carousel-ui/writing-skill-config-hooks.js"),
+"async-skill-deep-change-cb": require("./writing-skills-carousel-ui/async-skill-deep-change-cb.js"),
+"29951": require("./writing-skills-carousel-ui/async-skill-deep-change-cb.js"),
+"corpc-debug-loggers": require("./writing-skills-carousel-ui/corpc-debug-loggers.js"),
+"363765": require("./writing-skills-carousel-ui/corpc-debug-loggers.js"),
+"skill-state-hook": require("./writing-skills-carousel-ui/skill-state-hook.js"),
+"377944": require("./writing-skills-carousel-ui/skill-state-hook.js"),
+"docx-permission-hook": require("./writing-skills-carousel-ui/docx-permission-hook.js"),
+"42326": require("./writing-skills-carousel-ui/docx-permission-hook.js"),
+"react-carousel-component": require("./writing-skills-carousel-ui/react-carousel-component.js"),
+"464116": require("./writing-skills-carousel-ui/react-carousel-component.js"),
+"debug-browser-config": require("./writing-skills-carousel-ui/debug-browser-config.js"),
+"471456": require("./writing-skills-carousel-ui/debug-browser-config.js"),
+"array-chunk": require("./writing-skills-carousel-ui/array-chunk.js"),
+"554639": require("./writing-skills-carousel-ui/array-chunk.js"),
+"skill-page-write-template-item": require("./writing-skills-carousel-ui/skill-page-write-template-item.js"),
+"561161": require("./writing-skills-carousel-ui/skill-page-write-template-item.js"),
+"chat-ai-write-template-list": require("./writing-skills-carousel-ui/chat-ai-write-template-list.js"),
+"587322": require("./writing-skills-carousel-ui/chat-ai-write-template-list.js"),
+"lifecycle-event-manager": require("./writing-skills-carousel-ui/lifecycle-event-manager.js"),
+"597916": require("./writing-skills-carousel-ui/lifecycle-event-manager.js"),
+"chat-ai-template-parser": require("./writing-skills-carousel-ui/chat-ai-template-parser.js"),
+"635776": require("./writing-skills-carousel-ui/chat-ai-template-parser.js"),
+"rpc-protocol-constants": require("./writing-skills-carousel-ui/rpc-protocol-constants.js"),
+"645329": require("./writing-skills-carousel-ui/rpc-protocol-constants.js"),
+"rpc-channel-core": require("./writing-skills-carousel-ui/rpc-channel-core.js"),
+"737542": require("./writing-skills-carousel-ui/rpc-channel-core.js"),
+"use-state-ref-hook": require("./writing-skills-carousel-ui/use-state-ref-hook.js"),
+"739141": require("./writing-skills-carousel-ui/use-state-ref-hook.js"),
+"react-use-previous-ref": require("./writing-skills-carousel-ui/react-use-previous-ref.js"),
+"744719": require("./writing-skills-carousel-ui/react-use-previous-ref.js"),
+"write-chat-input-panel": require("./writing-skills-carousel-ui/write-chat-input-panel.js"),
+"7478": require("./writing-skills-carousel-ui/write-chat-input-panel.js"),
+"react-samantha-tag": require("./writing-skills-carousel-ui/react-samantha-tag.js"),
+"79739": require("./writing-skills-carousel-ui/react-samantha-tag.js"),
+"use-chat-popover-config": require("./writing-skills-carousel-ui/use-chat-popover-config.js"),
+"82102": require("./writing-skills-carousel-ui/use-chat-popover-config.js"),
+"chat-canvas-expand-checker": require("./writing-skills-carousel-ui/chat-canvas-expand-checker.js"),
+"823556": require("./writing-skills-carousel-ui/chat-canvas-expand-checker.js"),
+"samantha-tag-selector": require("./writing-skills-carousel-ui/samantha-tag-selector.js"),
+"848347": require("./writing-skills-carousel-ui/samantha-tag-selector.js"),
+"arrow-left-icon-component": require("./writing-skills-carousel-ui/arrow-left-icon-component.js"),
+"901793": require("./writing-skills-carousel-ui/arrow-left-icon-component.js"),
+"flow-docx-editor-context": require("./writing-skills-carousel-ui/flow-docx-editor-context.js"),
+"912706": require("./writing-skills-carousel-ui/flow-docx-editor-context.js"),
+"rtl-chevron-right-icon": require("./writing-skills-carousel-ui/rtl-chevron-right-icon.js"),
+"946692": require("./writing-skills-carousel-ui/rtl-chevron-right-icon.js"),
+"rpc-host-manager": require("./writing-skills-carousel-ui/rpc-host-manager.js"),
+"953389": require("./writing-skills-carousel-ui/rpc-host-manager.js"),
+"debug-module-factory": require("./writing-skills-carousel-ui/debug-module-factory.js"),
+"991070": require("./writing-skills-carousel-ui/debug-module-factory.js")
+        }, function (e) {
+  !function () {
+    if ("undefined" != typeof window) {
+      var e = {
+          skill_writing_template_bySteps_tag: "\u5206\u6B65\u9AA4"
+        },
+        t = window.__i18n__ && window.__i18n__.instance;
+      t ? t.addResourceBundle("zh", "web", e, !0, !0) : (window.__i18n__ = window.__i18n__ || {}, window.__i18n__.queue = window.__i18n__.queue || {}, window.__i18n__.queue.zh = Object.assign(window.__i18n__.queue.zh || {}, e));
+    }
+  }();
+}]);
+        

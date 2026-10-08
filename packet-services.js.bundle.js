@@ -1,0 +1,2 @@
+(()=>{var _=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports);var c=_((o,t)=>{t.exports=function(a,e,r){var s=r("packet-services-factory");r("mermaid-langium-grammars"),r.d(e,{createPacketServices:function(){return s.createPacketServices}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["packet-services",98728],{"packet-services-factory-exporter":c(),353267:c()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/packet-services.js.bundle.js.map

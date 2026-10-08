@@ -1,0 +1,2 @@
+(()=>{var i=(_,e)=>()=>(e||_((e={exports:{}}).exports,e),e.exports);var a=i((r,s)=>{s.exports=function(_,e,t){_.exports=t.p+"static/image/example-erase.b0b0e182.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["static-image-example",5641],{"static-erase-image-path":a(),128395:a()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/static-image-example.js.bundle.js.map

@@ -1,0 +1,31 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'Z' to 'StrikethroughIcon'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 38746.3a784493.js
+         * chunkId: 38746
+         * moduleId: 872208
+         */
+module.exports = function (module, exports, require) {
+  require("react-core-library-reexport") /*id: 634663*/;
+  var rtlIconFactory = require("rtl-icon-factory") /*id: 682145*/;
+  var reactJsxRuntimeCoreReexport = require("react-jsx-runtime-core-reexport") /*id: 917067*/;
+  var n = rtlIconFactory.createRtlIcon(reactJsxRuntimeCoreReexport.jsx(e => reactJsxRuntimeCoreReexport.jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1em",
+    height: "1em",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    ...e,
+    children: reactJsxRuntimeCoreReexport.jsx("path", {
+      fill: "currentColor",
+      d: "M5.408 7.226c.029-1.261.522-2.45 1.41-3.395C7.933 2.636 9.634 2 11.734 2c2.142 0 3.78.57 4.868 1.689.705.69 1.095 1.394 1.423 2.598.075.276.035.468-.092.491l-1.861.345c-.14.026-.183-.026-.244-.31-.147-.682-.324-1.067-.694-1.497-.735-.93-1.909-1.419-3.387-1.419-2.403 0-4.153 1.395-4.2 3.393-.019.846.338 1.58.996 2.043H5.792c-.27-.621-.402-1.332-.384-2.107m8.904 6.024H3.784a.533.533 0 0 1-.533-.533v-.809c0-.294.239-.533.533-.533h16.434c.294 0 .533.239.533.533v.809a.533.533 0 0 1-.533.533h-2.592c.542.806.96 1.954.934 3.055C18.48 19.82 15.786 22 11.49 22c-2.875 0-5.028-.964-6.13-2.745-.382-.629-.58-1.148-.792-2.11-.108-.488-.079-.54.326-.618l1.41-.271c.44-.085.495-.04.575.376.187.966.455 1.533.993 2.094.805.858 2.104 1.305 3.766 1.305 2.844 0 4.695-1.39 4.747-3.61.024-1.072-.306-1.872-1-2.365-.399-.287-1.072-.806-1.072-.806"
+    })
+  }), {}));
+  require.d(exports, {
+    StrikethroughIcon: function () {
+      return n;
+    }
+  });
+}
