@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <style>text{font-family:Arial,sans-serif;fill:#182230}.t{font-size:30px;font-weight:bold}.h{font-size:21px;font-weight:bold}.b{font-size:17px}.box{stroke:#385c8a;stroke-width:3;rx:18}.arrow{stroke:#516f94;stroke-width:4;fill:none;marker-end:url(#a)}</style>
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12z" fill="#516f94"/></marker></defs>
+  <rect width="1600" height="900" fill="#f7f9fc"/>
+  <text x="70" y="65" class="t">Plugin activation and hook dispatch</text>
+  <rect x="70" y="150" width="270" height="150" class="box" fill="#dcecff"/><text x="100" y="205" class="h">Feature package</text><text x="100" y="240" class="b">input / message / layout</text><text x="100" y="270" class="b">guidance / feed / launcher</text>
+  <rect x="450" y="150" width="270" height="150" class="box" fill="#e5f5ed"/><text x="492" y="205" class="h">Matcher registry</text><text x="490" y="240" class="b">predicate selects owner</text><text x="490" y="270" class="b">for context/message/skill</text>
+  <rect x="830" y="150" width="290" height="150" class="box" fill="#fff0d6"/><text x="870" y="205" class="h">IoC lazy loader</text><text x="870" y="240" class="b">memoized resource</text><text x="870" y="270" class="b">priority ordered</text>
+  <rect x="1230" y="150" width="290" height="150" class="box" fill="#f5e5fb"/><text x="1270" y="205" class="h">Plugin instance</text><text x="1270" y="240" class="b">stable identifier</text><text x="1270" y="270" class="b">selected only when needed</text>
+  <path d="M340 225H440" class="arrow"/><path d="M720 225H820" class="arrow"/><path d="M1120 225H1220" class="arrow"/>
+  <rect x="100" y="510" width="250" height="140" class="box" fill="#e9f0ff"/><text x="125" y="558" class="h">Protocol transform</text><text x="125" y="592" class="b">wire ↔ canonical message</text>
+  <rect x="420" y="510" width="250" height="140" class="box" fill="#e9f0ff"/><text x="452" y="558" class="h">Lifecycle</text><text x="450" y="592" class="b">ordered async effects</text>
+  <rect x="740" y="510" width="250" height="140" class="box" fill="#e9f0ff"/><text x="780" y="558" class="h">Skill input</text><text x="770" y="592" class="b">lazy editor / pre-send</text>
+  <rect x="1060" y="510" width="250" height="140" class="box" fill="#e9f0ff"/><text x="1090" y="558" class="h">URL action</text><text x="1090" y="592" class="b">validate → execute</text>
+  <rect x="700" y="740" width="310" height="90" class="box" fill="#e5f5ed"/><text x="748" y="793" class="h">Stores, services, React UI</text>
+  <path d="M1375 300V390H225V500" class="arrow"/><path d="M1375 300V390H545V500" class="arrow"/><path d="M1375 300V390H865V500" class="arrow"/><path d="M1375 300V390H1185V500" class="arrow"/>
+  <path d="M225 650V700H855V730" class="arrow"/><path d="M545 650V700H855V730" class="arrow"/><path d="M865 650V730" class="arrow"/><path d="M1185 650V700H855V730" class="arrow"/>
+</svg>
