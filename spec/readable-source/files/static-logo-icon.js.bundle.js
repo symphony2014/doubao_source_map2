@@ -1,0 +1,2 @@
+(()=>{var i=(_,o)=>()=>(o||_((o={exports:{}}).exports,o),o.exports);var e=i((l,s)=>{s.exports=function(_,o,t){_.exports=t.p+"static/image/logo-icon.970bfd4c.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["static-logo-icon",47691],{"logo-icon-asset-path":e(),966331:e()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/static-logo-icon.js.bundle.js.map

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-label="Cross cutting services diagram">
+<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#172033}.title{font-size:25px;font-weight:700}.sub{font-size:14px;fill:#536177}.core{fill:#fff9df;stroke:#ab7b10;stroke-width:2}.box{fill:#f7f3e8;stroke:#967e44;stroke-width:2}.line{stroke:#60728c;stroke-width:2;marker-end:url(#a)}.label{font-size:16px;font-weight:600}.small{font-size:13px;fill:#536177}</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#60728c"/></marker></defs>
+<text x="34" y="42" class="title">7. Cross-cutting Services</text><text x="34" y="68" class="sub">Configuration, tracing, security context, and lifecycle reporting</text>
+<rect x="272" y="210" width="216" height="75" rx="12" class="core"/><text x="300" y="242" class="label">Chat protocol + UI</text><text x="307" y="266" class="small">shared execution path</text>
+<rect x="50" y="115" width="170" height="65" rx="12" class="box"/><text x="68" y="153" class="label">API config</text>
+<rect x="540" y="115" width="170" height="65" rx="12" class="box"/><text x="563" y="153" class="label">Fingerprint</text>
+<rect x="50" y="350" width="170" height="65" rx="12" class="box"/><text x="82" y="388" class="label">Logger</text>
+<rect x="540" y="350" width="170" height="65" rx="12" class="box"/><text x="557" y="388" class="label">Session lifecycle</text>
+<line x1="220" y1="178" x2="300" y2="210" class="line"/><line x1="540" y1="178" x2="460" y2="210" class="line"/><line x1="220" y1="352" x2="300" y2="285" class="line"/><line x1="540" y1="352" x2="460" y2="285" class="line"/>
+<text x="86" y="462" class="small">Preserve log ID, trace ID, terminal message state, and URL sanitization boundaries.</text>
+</svg>

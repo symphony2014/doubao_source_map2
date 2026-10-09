@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["asset-cici-avatar/cici-avatar-asset-path.js", "asset-cici-avatar.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: 38478.268d78bf.js\n         * chunkId: 38478\n         * moduleId: 179057\n         */\nmodule.exports = function (module, exports, require) {\n  module.exports = require.p + \"static/image/cici_avatar.8bc8fb37.png\";\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['asset-cici-avatar', 38478], {\n        \"cici-avatar-asset-path\": require(\"./asset-cici-avatar/cici-avatar-asset-path.js\"),\n\"179057\": require(\"./asset-cici-avatar/cici-avatar-asset-path.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CAOAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnDD,EAAO,QAAUC,EAAQ,EAAI,uCAC/B,KCTC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,oBAAqB,KAAK,EAAG,CACtG,yBAA0B,IAClC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_cici_avatar_asset_path", "__commonJSMin", "exports", "module", "require"]
+}

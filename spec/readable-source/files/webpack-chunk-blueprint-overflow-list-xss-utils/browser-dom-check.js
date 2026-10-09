@@ -1,0 +1,13 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'Z' to 'isBrowserDom'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 24583.e6de5b2b.js
+         * chunkId: 24583
+         * moduleId: 38090
+         */
+module.exports = function (module, exports, require) {
+  var n = typeof window != "undefined" && !!window.document && !!window.document.createElement;
+  exports.isBrowserDom = n;
+}

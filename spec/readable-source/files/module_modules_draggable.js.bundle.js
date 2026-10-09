@@ -1,0 +1,2 @@
+(()=>{var o=(e,u)=>()=>(u||e((u={exports:{}}).exports,u),u.exports);var _=o((f,d)=>{d.exports=function(e,u,l){function n(){}l.r(u),l.d(u,{default:function(){return n}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["module_modules_draggable",20603],{"draggable-module-stub":_(),686100:_()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/module_modules_draggable.js.bundle.js.map

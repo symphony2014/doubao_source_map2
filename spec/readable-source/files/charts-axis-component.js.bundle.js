@@ -1,0 +1,2 @@
+(()=>{var s=(a,e)=>()=>(e||a((e={exports:{}}).exports,e),e.exports);var _=s((i,t)=>{t.exports=function(a,e,r){a.exports=r.p+"static/image/doubao_avatar_white_dark.294e75e0.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["charts-axis-component",42765],{"asset-doubao-avatar-white-dark":_(),40123:_()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/charts-axis-component.js.bundle.js.map

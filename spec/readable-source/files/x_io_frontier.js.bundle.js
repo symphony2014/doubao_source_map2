@@ -1,0 +1,2 @@
+(()=>{var i=(o,e)=>()=>(e||o((e={exports:{}}).exports,e),e.exports);var n=i((l,r)=>{r.exports=function(o,e,t){var _=t("websocket-connection-manager");t.d(e,{FrontierClient:function(){return _.WebSocketClient}})}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["x_io_frontier",30877],{"frontier-client-export":n(),831684:n()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/x_io_frontier.js.bundle.js.map

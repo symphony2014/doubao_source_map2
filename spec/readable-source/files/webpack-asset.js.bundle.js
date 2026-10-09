@@ -1,0 +1,2 @@
+(()=>{var g=(_,e)=>()=>(e||_((e={exports:{}}).exports,e),e.exports);var o=g((t,r)=>{r.exports=function(_,e,s){_.exports=s.p+"static/image/logo-icon-grey-bg.0ede126b.png"}});(self.__LOADABLE_LOADED_CHUNKS__=self.__LOADABLE_LOADED_CHUNKS__||[]).push([["webpack-asset",84578],{"logo-icon-grey-bg-path":o(),625852:o()},null]);})();
+//# sourceMappingURL=http://127.0.0.1:11434/web_cache_260316012/source_map/webpack-asset.js.bundle.js.map

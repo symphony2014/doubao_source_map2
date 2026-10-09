@@ -1,0 +1,10 @@
+// process step : FolderAndFileRename
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 2674.194debdc.js
+         * chunkId: 2674
+         * moduleId: 561469
+         */
+module.exports = function (module, exports, require) {
+  module.exports = typeof Reflect != "undefined" && Reflect && Reflect.apply;
+}

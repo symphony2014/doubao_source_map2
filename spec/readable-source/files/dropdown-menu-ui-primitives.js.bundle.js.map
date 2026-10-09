@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["dropdown-menu-ui-primitives.js"],
+  "sourcesContent": ["(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['dropdown-menu-ui-primitives', 889], {\n        \n        }, null]);\n        "],
+  "mappings": "OAAC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,8BAA+B,GAAG,EAAG,CAE9G,EAAG,IAAI,CAAC",
+  "names": []
+}

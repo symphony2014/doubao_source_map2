@@ -1,0 +1,25 @@
+(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['history', 17374], {
+        "history-visibility-constants": require("./history/history-visibility-constants.js"),
+"209015": require("./history/history-visibility-constants.js"),
+"upgrade-status-enum": require("./history/upgrade-status-enum.js"),
+"249746": require("./history/upgrade-status-enum.js"),
+"share-outlined-icon-component": require("./history/share-outlined-icon-component.js"),
+"40742": require("./history/share-outlined-icon-component.js"),
+"theme-detection-context-provider": require("./history/theme-detection-context-provider.js"),
+"464683": require("./history/theme-detection-context-provider.js"),
+"history-visibility-observer": require("./history/history-visibility-observer.js"),
+"474806": require("./history/history-visibility-observer.js"),
+"theme-aware-icon-wrapper": require("./history/theme-aware-icon-wrapper.js"),
+"512578": require("./history/theme-aware-icon-wrapper.js"),
+"history-visibility-tracker": require("./history/history-visibility-tracker.js"),
+"52208": require("./history/history-visibility-tracker.js"),
+"docx-history-timeline-component": require("./history/docx-history-timeline-component.js"),
+"570214": require("./history/docx-history-timeline-component.js"),
+"history-component": require("./history/history-component.js"),
+"607844": require("./history/history-component.js"),
+"history-store-actions": require("./history/history-store-actions.js"),
+"616272": require("./history/history-store-actions.js"),
+"security-audit-operation-tracker": require("./history/security-audit-operation-tracker.js"),
+"938820": require("./history/security-audit-operation-tracker.js")
+        }, null]);
+        

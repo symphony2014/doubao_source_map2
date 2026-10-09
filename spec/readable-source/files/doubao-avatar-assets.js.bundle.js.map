@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["doubao-avatar-assets/doubao-avatar-blue-dark-path.js", "doubao-avatar-assets.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: 86325.c91bb476.js\n         * chunkId: 86325\n         * moduleId: 849865\n         */\nmodule.exports = function (module, exports, require) {\n  module.exports = require.p + \"static/image/doubao_avatar_blue_dark.a20873f0.png\";\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['doubao-avatar-assets', 86325], {\n        \"doubao-avatar-blue-dark-path\": require(\"./doubao-avatar-assets/doubao-avatar-blue-dark-path.js\"),\n\"849865\": require(\"./doubao-avatar-assets/doubao-avatar-blue-dark-path.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CAOAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnDD,EAAO,QAAUC,EAAQ,EAAI,mDAC/B,KCTC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,uBAAwB,KAAK,EAAG,CACzG,+BAAgC,IACxC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_doubao_avatar_blue_dark_path", "__commonJSMin", "exports", "module", "require"]
+}

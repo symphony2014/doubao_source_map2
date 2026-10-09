@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["samantha-ui-deprecated-gallery-xgplayer-css/webpack-module-wrapper.js", "samantha-ui-deprecated-gallery-xgplayer-css.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: module_block_file.6e021e7d.js\n         * chunkId: 12558\n         * moduleId: 631708\n         */\nmodule.exports = function (module, exports, require) {\n  require.r(exports);\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['samantha-ui-deprecated-gallery-xgplayer-css', 31730], {\n        \"webpack-module-wrapper\": require(\"./samantha-ui-deprecated-gallery-xgplayer-css/webpack-module-wrapper.js\"),\n\"631708\": require(\"./samantha-ui-deprecated-gallery-xgplayer-css/webpack-module-wrapper.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CAOAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnDA,EAAQ,EAAEF,CAAO,CACnB,KCTC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,8CAA+C,KAAK,EAAG,CAChI,yBAA0B,IAClC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_webpack_module_wrapper", "__commonJSMin", "exports", "module", "require"]
+}

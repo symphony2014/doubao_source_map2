@@ -1,0 +1,50 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'E' to 'enablePerfMark'
+// - Renamed export 'G' to 'perfMarkConstants'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 74277.42240636.js
+         * chunkId: 74277
+         * moduleId: 895953
+         */
+module.exports = function (module, exports, require) {
+  var processBrowserShim = require("process-browser-shim") /*id: 488992*/;
+  let o = {
+    DOCX_APP_CONSTRUCTOR: "docxAppConstructor",
+    DOC_RENDER: "DOC_RENDER",
+    DOC_DID_MOUNT: "DOC_DID_MOUNT",
+    DOC_CONTENT_RENDER: "DOC_CONTENT_RENDER",
+    DOC_CONTENT_DID_MOUNT: "DOC_CONTENT_DID_MOUNT",
+    PAGE_MAIN_RENDER: "PAGE_MAIN_RENDER",
+    PAGE_MAIN_DID_MOUNT: "PAGE_MAIN_DID_MOUNT",
+    EDITOR_RENDER: "EDITOR_RENDER",
+    EDITOR_DID_MOUNT: "EDITOR_DID_MOUNT",
+    EDITOR_ROOT_RENDER_START: "EDITOR_ROOT_RENDER_START",
+    EDITOR_ROOT_RENDER_END: "EDITOR_ROOT_RENDER_END",
+    CREATE_DOCX_EDITOR_START: "CREATE_DOCX_EDITOR_START",
+    DOCX_EDITOR_BEFORE_CONSTRUCTOR: "DOCX_EDITOR_BEFORE_CONSTRUCTOR",
+    DOCX_EDITOR_AFTER_CONSTRUCTOR: "DOCX_EDITOR_AFTER_CONSTRUCTOR",
+    DOCX_EDITOR_AFTER_INIT_INTERNALS: "DOCX_EDITOR_AFTER_INIT_INTERNALS",
+    DOCX_EDITOR_AFTER_SETUP_MODULES: "DOCX_EDITOR_AFTER_SETUP_MODULES",
+    DOCX_EDITOR_AFTER_RUN_MODULES: "DOCX_EDITOR_AFTER_RUN_MODULES",
+    DOCX_EDITOR_AFTER_INIT: "DOCX_EDITOR_AFTER_INIT",
+    DOCX_EDITOR_BEFORE_INIT_BLOCK_TREE: "DOCX_EDITOR_BEFORE_INIT_BLOCK_TREE",
+    DOCX_EDITOR_AFTER_INIT_BLOCK_TREE: "DOCX_EDITOR_AFTER_INIT_BLOCK_TREE",
+    DOCX_EDITOR_MODULES_COUNT: "DOCX_EDITOR_MODULES_COUNT",
+    CREATE_DOCX_EDITOR_END: "CREATE_DOCX_EDITOR_END",
+    DOC_RENDER_COUNT: "DOC_RENDER_COUNT",
+    DOC_CONTENT_RENDER_COUNT: "DOC_CONTENT_RENDER_COUNT",
+    PAGE_MAIN_RENDER_COUNT: "PAGE_MAIN_RENDER_COUNT",
+    EDITOR_RENDER_COUNT: "EDITOR_RENDER_COUNT"
+  };
+  let l = processBrowserShim.env.CUSTOM_ENABLE_PERF_MARK;
+  require.d(exports, {
+    enablePerfMark: function () {
+      return l;
+    },
+    perfMarkConstants: function () {
+      return o;
+    }
+  });
+}

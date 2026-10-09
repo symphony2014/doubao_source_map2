@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["static-image-example/static-erase-image-path.js", "static-image-example.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: 5641.781ac877.js\n         * chunkId: 5641\n         * moduleId: 128395\n         */\nmodule.exports = function (module, exports, require) {\n  module.exports = require.p + \"static/image/example-erase.b0b0e182.png\";\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['static-image-example', 5641], {\n        \"static-erase-image-path\": require(\"./static-image-example/static-erase-image-path.js\"),\n\"128395\": require(\"./static-image-example/static-erase-image-path.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CAOAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnDD,EAAO,QAAUC,EAAQ,EAAI,yCAC/B,KCTC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,uBAAwB,IAAI,EAAG,CACxG,0BAA2B,IACnC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_static_erase_image_path", "__commonJSMin", "exports", "module", "require"]
+}

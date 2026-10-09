@@ -1,0 +1,31 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed export 'Z' to 'RtlChatCheckIcon'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: chat.dc7535d9.js
+         * chunkId: 95928
+         * moduleId: 690527
+         */
+module.exports = function (module, exports, require) {
+  require("react-core-library-reexport") /*id: 634663*/;
+  var rtlIconFactory = require("rtl-icon-factory") /*id: 682145*/;
+  var reactJsxRuntimeCoreReexport = require("react-jsx-runtime-core-reexport") /*id: 917067*/;
+  var o = rtlIconFactory.createRtlIcon(reactJsxRuntimeCoreReexport.jsx(e => reactJsxRuntimeCoreReexport.jsx("svg", {
+    xmlns: "http://www.w3.org/2000/svg",
+    width: "1em",
+    height: "1em",
+    fill: "none",
+    viewBox: "0 0 24 24",
+    ...e,
+    children: reactJsxRuntimeCoreReexport.jsx("path", {
+      fill: "currentColor",
+      d: "M9.218 17.41 19.83 6.796a.99.99 0 1 1 1.389 1.415c-3.545 3.425-4.251 4.105-11.419 11.074a.997.997 0 0 1-1.375.018c-1.924-1.801-3.709-3.568-5.573-5.43a.999.999 0 0 1 1.414-1.413z"
+    })
+  }), {}));
+  require.d(exports, {
+    RtlChatCheckIcon: function () {
+      return o;
+    }
+  });
+}

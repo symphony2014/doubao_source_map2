@@ -1,0 +1,77 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Resolved require(132840) to 'moment-js-core-lib'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: 85547.08aa3c4c.js
+         * chunkId: 85547
+         * moduleId: 816665
+         */
+module.exports = function (module, exports, require) {
+  (function (e) {
+    "use strict";
+
+    var a = ["ޖެނުއަރީ", "ފެބްރުއަރީ", "މާރިޗު", "އޭޕްރީލު", "މޭ", "ޖޫން", "ޖުލައި", "އޯގަސްޓު", "ސެޕްޓެމްބަރު", "އޮކްޓޯބަރު", "ނޮވެމްބަރު", "ޑިސެމްބަރު"];
+    var t = ["އާދިއްތަ", "ހޯމަ", "އަންގާރަ", "ބުދަ", "ބުރާސްފަތި", "ހުކުރު", "ހޮނިހިރު"];
+    e.defineLocale("dv", {
+      months: a,
+      monthsShort: a,
+      weekdays: t,
+      weekdaysShort: t,
+      weekdaysMin: "އާދި_ހޯމަ_އަން_ބުދަ_ބުރާ_ހުކު_ހޮނި".split("_"),
+      longDateFormat: {
+        LT: "HH:mm",
+        LTS: "HH:mm:ss",
+        L: "D/M/YYYY",
+        LL: "D MMMM YYYY",
+        LLL: "D MMMM YYYY HH:mm",
+        LLLL: "dddd D MMMM YYYY HH:mm"
+      },
+      meridiemParse: /މކ|މފ/,
+      isPM: function (e) {
+        return e === "މފ";
+      },
+      meridiem: function (e, a, t) {
+        if (e < 12) {
+          return "މކ";
+        } else {
+          return "މފ";
+        }
+      },
+      calendar: {
+        sameDay: "[މިއަދު] LT",
+        nextDay: "[މާދަމާ] LT",
+        nextWeek: "dddd LT",
+        lastDay: "[އިއްޔެ] LT",
+        lastWeek: "[ފާއިތުވި] dddd LT",
+        sameElse: "L"
+      },
+      relativeTime: {
+        future: "ތެރޭގައި %s",
+        past: "ކުރިން %s",
+        s: "ސިކުންތުކޮޅެއް",
+        ss: "d% ސިކުންތު",
+        m: "މިނިޓެއް",
+        mm: "މިނިޓު %d",
+        h: "ގަޑިއިރެއް",
+        hh: "ގަޑިއިރު %d",
+        d: "ދުވަހެއް",
+        dd: "ދުވަސް %d",
+        M: "މަހެއް",
+        MM: "މަސް %d",
+        y: "އަހަރެއް",
+        yy: "އަހަރު %d"
+      },
+      preparse: function (e) {
+        return e.replace(/،/g, ",");
+      },
+      postformat: function (e) {
+        return e.replace(/,/g, "،");
+      },
+      week: {
+        dow: 7,
+        doy: 12
+      }
+    });
+  })(require("moment-js-core-lib") /*id: 132840*/);
+}

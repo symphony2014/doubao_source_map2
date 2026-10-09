@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="760" height="520" viewBox="0 0 760 520" role="img" aria-label="Input and attachments diagram">
+<style>text{font-family:Segoe UI,Arial,sans-serif;fill:#172033}.title{font-size:25px;font-weight:700}.sub{font-size:14px;fill:#536177}.box{fill:#e8f8fb;stroke:#197d93;stroke-width:2}.line{stroke:#60728c;stroke-width:2;marker-end:url(#a)}.label{font-size:16px;font-weight:600}.small{font-size:13px;fill:#536177}</style><defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3z" fill="#60728c"/></marker></defs>
+<text x="34" y="42" class="title">3. Input &amp; Attachments</text><text x="34" y="68" class="sub">Text and files become validated, typed outbound message blocks</text>
+<rect x="28" y="205" width="125" height="80" rx="12" class="box"/><text x="53" y="238" class="label">Input UI</text><text x="44" y="262" class="small">text + mode</text>
+<rect x="211" y="205" width="145" height="80" rx="12" class="box"/><text x="229" y="238" class="label">Upload Store</text><text x="226" y="262" class="small">localKey + state</text>
+<rect x="414" y="205" width="145" height="80" rx="12" class="box"/><text x="427" y="238" class="label">MessageBuilder</text><text x="427" y="262" class="small">typed blocks</text>
+<rect x="617" y="205" width="115" height="80" rx="12" class="box"/><text x="630" y="238" class="label">Sender</text><text x="631" y="262" class="small">submit</text>
+<line x1="153" y1="245" x2="209" y2="245" class="line"/><line x1="356" y1="245" x2="412" y2="245" class="line"/><line x1="559" y1="245" x2="615" y2="245" class="line"/>
+<text x="52" y="350" class="label">Identity rules</text><text x="52" y="380" class="small">• localKey links the UI chip, upload progress, retry, and outbound attachment</text><text x="52" y="408" class="small">• remote key, MD5, parse state, and review state must exist before submission</text><text x="52" y="436" class="small">• images become image resources only when VLM mode is enabled</text>
+</svg>

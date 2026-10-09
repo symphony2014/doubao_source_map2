@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["katex/katex-renderer-wrapper.js", "katex.js"],
+  "sourcesContent": ["// process step : FolderAndFileRename\n// process step : TopologicalSinglePass\n// - Resolved require(811377) to 'katex-core-renderer'\n// process step : ModuleUnpack - Unpacked via Webcrack\n/**\n         * chunk file: katex.bea6c839.js\n         * chunkId: 19945\n         * moduleId: 958368\n         */\nmodule.exports = function (module, exports, require) {\n  var e = require(\"katex-core-renderer\") /*id: 811377*/.default;\n  require.r(exports);\n  require.d(exports, {\n    default: function () {\n      return e;\n    }\n  });\n}", "(self.__LOADABLE_LOADED_CHUNKS__ = self.__LOADABLE_LOADED_CHUNKS__ || []).push([['katex', 19945], {\n        \"katex-renderer-wrapper\": require(\"./katex/katex-renderer-wrapper.js\"),\n\"958368\": require(\"./katex/katex-renderer-wrapper.js\")\n        }, null]);\n        "],
+  "mappings": "oEAAA,IAAAA,EAAAC,EAAA,CAAAC,EAAAC,IAAA,CASAA,EAAO,QAAU,SAAUA,EAAQD,EAASE,EAAS,CACnD,IAAIC,EAAID,EAAQ,qBAAqB,EAAiB,QACtDA,EAAQ,EAAEF,CAAO,EACjBE,EAAQ,EAAEF,EAAS,CACjB,QAAS,UAAY,CACnB,OAAOG,CACT,CACF,CAAC,CACH,KCjBC,KAAK,2BAA6B,KAAK,4BAA8B,CAAC,GAAG,KAAK,CAAC,CAAC,QAAS,KAAK,EAAG,CAC1F,yBAA0B,IAClC,OAAU,GACF,EAAG,IAAI,CAAC",
+  "names": ["require_katex_renderer_wrapper", "__commonJSMin", "exports", "module", "require", "e"]
+}

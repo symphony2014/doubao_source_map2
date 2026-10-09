@@ -1,0 +1,21 @@
+// process step : FolderAndFileRename
+// process step : TopologicalSinglePass
+// - Renamed variable 'n' to 'functionBindFallback'
+// - Resolved require(263497) to 'function-bind-fallback'
+// process step : ModuleUnpack - Unpacked via Webcrack
+/**
+         * chunk file: lib-polyfill.888d57d5.js
+         * chunkId: 72126
+         * moduleId: 76713
+         */
+module.exports = function (module, exports, require) {
+  var functionBindFallback = require("function-bind-fallback") /*id: 263497*/;
+  var o = WeakMap.prototype;
+  module.exports = {
+    WeakMap: WeakMap,
+    set: functionBindFallback(o.set),
+    get: functionBindFallback(o.get),
+    has: functionBindFallback(o.has),
+    remove: functionBindFallback(o.delete)
+  };
+}

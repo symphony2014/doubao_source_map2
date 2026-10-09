@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Android WebRTC PCM Mock</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 24px;
+      color: #161616;
+      background: #f6f7f9;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      margin: 0 0 16px;
+      font-size: 24px;
+    }
+
+    section {
+      margin-top: 16px;
+      padding: 16px;
+      background: #fff;
+      border: 1px solid #dfe3ea;
+      border-radius: 8px;
+    }
+
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    button {
+      min-height: 36px;
+      padding: 0 14px;
+      border: 1px solid #c9ced8;
+      border-radius: 6px;
+      background: #fff;
+      color: #161616;
+      font: inherit;
+      cursor: pointer;
+    }
+
+    button.primary {
+      border-color: #1769e0;
+      background: #1769e0;
+      color: #fff;
+    }
+
+    button:disabled {
+      cursor: not-allowed;
+      opacity: .55;
+    }
+
+    label {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    input[type="number"],
+    input[type="text"] {
+      width: 96px;
+      min-height: 32px;
+      padding: 0 8px;
+      border: 1px solid #c9ced8;
+      border-radius: 6px;
+      font: inherit;
+    }
+
+    textarea {
+      width: 100%;
+      min-height: 150px;
+      box-sizing: border-box;
+      border: 1px solid #c9ced8;
+      border-radius: 6px;
+      padding: 10px;
+      font: 12px/1.45 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+      resize: vertical;
+    }
+
+    pre {
+      min-height: 160px;
+      margin: 0;
+      padding: 10px;
+      white-space: pre-wrap;
+      word-break: break-word;
+      background: #f8fafc;
+      border: 1px solid #dfe3ea;
+      border-radius: 6px;
+      font: 14px/1.5 ui-monospace, SFMono-Regular, Consolas, "Liberation Mono", monospace;
+    }
+
+    .status {
+      min-height: 22px;
+      color: #4d5664;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Android WebRTC PCM Mock</h1>
+
+    <section>
+      <div class="row">
+        <button id="createOfferBtn" class="primary">Create offer</button>
+        <button id="signalOfferBtn">Signal via provider</button>
+        <button id="applyAnswerBtn">Apply answer</button>
+        <button id="startMicBtn" disabled>Start microphone</button>
+        <button id="stopBtn" disabled>Stop</button>
+        <label>
+          endpoint
+          <input id="endpointInput" type="text" value="http://127.0.0.1:11434/v1/webrtc/offer" style="width:320px">
+        </label>
+        <label>
+          handler
+          <input id="handlerTypeInput" type="text" value="" placeholder="optional" style="width:120px">
+        </label>
+        <label>
+          worker
+          <input id="workerIdInput" type="number" min="0" step="1" placeholder="optional">
+        </label>
+        <label>
+          chunk bytes
+          <input id="chunkBytes" type="number" min="640" step="320" value="6400">
+        </label>
+      </div>
+      <p id="status" class="status">Create an offer, signal it through the provider, then start the microphone after the data channel opens. If opened as file://, use an absolute http:// endpoint.</p>
+    </section>
+
+    <section>
+      <h2>Offer from this Android mock</h2>
+      <textarea id="offerText" spellcheck="false"></textarea>
+    </section>
+
+    <section>
+      <h2>Answer from Doubao _symphony.js</h2>
+      <textarea id="answerText" spellcheck="false"></textarea>
+    </section>
+
+    <section>
+      <h2>ASR response text</h2>
+      <pre id="responseText">Waiting for text...</pre>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var SAMPLE_RATE = 16000;
+      var CHANNELS = 1;
+
+      var createOfferBtn = document.getElementById("createOfferBtn");
+      var signalOfferBtn = document.getElementById("signalOfferBtn");
+      var applyAnswerBtn = document.getElementById("applyAnswerBtn");
+      var startMicBtn = document.getElementById("startMicBtn");
+      var stopBtn = document.getElementById("stopBtn");
+      var offerText = document.getElementById("offerText");
+      var answerText = document.getElementById("answerText");
+      var responseText = document.getElementById("responseText");
+      var statusEl = document.getElementById("status");
+      var chunkBytesEl = document.getElementById("chunkBytes");
+      var endpointInput = document.getElementById("endpointInput");
+      var handlerTypeInput = document.getElementById("handlerTypeInput");
+      var workerIdInput = document.getElementById("workerIdInput");
+
+      var peer = null;
+      var channel = null;
+      var audioContext = null;
+      var mediaStream = null;
+      var processor = null;
+      var source = null;
+      var pendingBytes = [];
+      var pendingByteLength = 0;
+      var latestResponseText = "";
+
+      function setStatus(value) {
+        statusEl.textContent = value;
+      }
+
+      function arrayBufferToBase64(buffer) {
+        var bytes = new Uint8Array(buffer);
+        var binary = "";
+        var blockSize = 0x8000;
+        for (var i = 0; i < bytes.length; i += blockSize) {
+          binary += String.fromCharCode.apply(null, bytes.subarray(i, i + blockSize));
+        }
+        return btoa(binary);
+      }
+
+      function floatToPcm16(float32) {
+        var output = new Int16Array(float32.length);
+        for (var i = 0; i < float32.length; i++) {
+          var sample = Math.max(-1, Math.min(1, float32[i]));
+          output[i] = sample < 0 ? sample * 0x8000 : sample * 0x7fff;
+        }
+        return new Uint8Array(output.buffer);
+      }
+
+      function concatPendingBytes(targetBytes) {
+        var output = new Uint8Array(targetBytes);
+        var offset = 0;
+        while (offset < targetBytes && pendingBytes.length) {
+          var head = pendingBytes[0];
+          var need = targetBytes - offset;
+          if (head.byteLength <= need) {
+            output.set(head, offset);
+            offset += head.byteLength;
+            pendingBytes.shift();
+            pendingByteLength -= head.byteLength;
+          } else {
+            output.set(head.subarray(0, need), offset);
+            pendingBytes[0] = head.subarray(need);
+            pendingByteLength -= need;
+            offset += need;
+          }
+        }
+        return output;
+      }
+
+      function sendJson(payload) {
+        if (!channel || channel.readyState !== "open") {
+          return false;
+        }
+        channel.send(JSON.stringify(payload));
+        return true;
+      }
+
+      function receiveJson(message) {
+        var payload;
+        try {
+          payload = JSON.parse(message.data);
+        } catch (err) {
+          console.warn("Invalid DataChannel message:", message.data);
+          return;
+        }
+
+        if (payload.type === "text") {
+          latestResponseText = payload.text || "";
+          responseText.textContent = latestResponseText || "Waiting for text...";
+          return;
+        }
+
+        if (payload.type === "done") {
+          latestResponseText = payload.text || latestResponseText;
+          responseText.textContent = latestResponseText || "Finished without text.";
+          setStatus("ASR finished.");
+          return;
+        }
+
+        if (payload.type === "error") {
+          setStatus(payload.message || "ASR error");
+          return;
+        }
+      }
+
+      function normalizeDescriptionText(value, defaultType) {
+        var parsed = value;
+        if (typeof parsed === "string") {
+          parsed = parsed.trim();
+        }
+
+        for (var i = 0; i < 3 && typeof parsed === "string"; i++) {
+          try {
+            parsed = JSON.parse(parsed);
+          } catch (err) {
+            break;
+          }
+        }
+
+        if (typeof parsed === "string") {
+          return {
+            type: defaultType,
+            sdp: parsed.replace(/\\r/g, "\r").replace(/\\n/g, "\n")
+          };
+        }
+
+        if (parsed && typeof parsed === "object") {
+          var description = {
+            type: parsed.type || defaultType,
+            sdp: String(parsed.sdp || "")
+          };
+          description.sdp = description.sdp.replace(/\\r/g, "\r").replace(/\\n/g, "\n");
+          return description;
+        }
+
+        throw new Error("Invalid WebRTC session description");
+      }
+
+      function normalizeOfferForRequest() {
+        if (!offerText.value.trim()) {
+          throw new Error("Create an offer first.");
+        }
+        return normalizeDescriptionText(offerText.value, "offer");
+      }
+
+      function normalizeAnswerFromResponse(payload) {
+        if (payload && typeof payload === "object" && payload.answer !== undefined) {
+          return payload.answer;
+        }
+        return payload;
+      }
+
+      function resolveEndpoint() {
+        var endpoint = endpointInput.value.trim() || "/v1/webrtc/offer";
+        if (location.protocol === "file:" && endpoint.charAt(0) === "/") {
+          throw new Error("Relative endpoint " + endpoint + " resolves to file:// when this page is opened from disk. Use an absolute URL like http://127.0.0.1:11434/v1/webrtc/offer, or serve this HTML from the provider origin.");
+        }
+        return endpoint;
+      }
+
+      function sendPcmBytes(bytes) {
+        pendingBytes.push(bytes);
+        pendingByteLength += bytes.byteLength;
+
+        var chunkBytes = Number(chunkBytesEl.value) || 6400;
+        while (pendingByteLength >= chunkBytes) {
+          var chunk = concatPendingBytes(chunkBytes);
+          sendJson({
+            type: "pcm",
+            data: arrayBufferToBase64(chunk.buffer)
+          });
+        }
+      }
+
+      async function waitForIceComplete(pc) {
+        if (pc.iceGatheringState === "complete") {
+          return;
+        }
+        await new Promise(function (resolve) {
+          pc.addEventListener("icegatheringstatechange", function onChange() {
+            if (pc.iceGatheringState === "complete") {
+              pc.removeEventListener("icegatheringstatechange", onChange);
+              resolve();
+            }
+          });
+        });
+      }
+
+      async function createOffer() {
+        if (peer) {
+          peer.close();
+        }
+        peer = new RTCPeerConnection();
+        channel = peer.createDataChannel("android-pcm-base64", {
+          ordered: true
+        });
+
+        channel.onopen = function () {
+          startMicBtn.disabled = false;
+          setStatus("WebRTC data channel open. Start microphone when ready.");
+        };
+        channel.onmessage = receiveJson;
+        channel.onclose = function () {
+          setStatus("WebRTC data channel closed.");
+        };
+
+        var offer = await peer.createOffer();
+        await peer.setLocalDescription(offer);
+        await waitForIceComplete(peer);
+        offerText.value = JSON.stringify(peer.localDescription.toJSON());
+        answerText.value = "";
+        latestResponseText = "";
+        responseText.textContent = "Waiting for text...";
+        startMicBtn.disabled = true;
+        setStatus("Offer ready. Click Signal via provider.");
+      }
+
+      async function applyAnswer() {
+        if (!peer) {
+          throw new Error("Create an offer first.");
+        }
+        var answer = normalizeDescriptionText(answerText.value, "answer");
+        await peer.setRemoteDescription(answer);
+        setStatus("Answer applied. Waiting for data channel open...");
+      }
+
+      async function signalOffer() {
+        if (!peer) {
+          await createOffer();
+        }
+
+        var endpoint = resolveEndpoint();
+        var handlerType = handlerTypeInput.value.trim();
+        var workerIdText = workerIdInput.value.trim();
+        var body = {
+          offer: normalizeOfferForRequest()
+        };
+        if (handlerType) {
+          body.handlerType = handlerType;
+        }
+        if (workerIdText) {
+          body.workerId = Number(workerIdText);
+        }
+
+        setStatus("Posting offer to " + endpoint + "...");
+        var response = await fetch(endpoint, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json"
+          },
+          body: JSON.stringify(body)
+        });
+
+        var responseText = await response.text();
+        if (!response.ok) {
+          throw new Error("Offer request failed: " + response.status + " " + responseText);
+        }
+
+        var payload;
+        try {
+          payload = JSON.parse(responseText);
+        } catch (err) {
+          payload = responseText;
+        }
+
+        var answer = normalizeAnswerFromResponse(payload);
+        answerText.value = typeof answer === "string" ? answer : JSON.stringify(answer);
+        await applyAnswer();
+
+        if (payload && typeof payload === "object" && payload.workerId !== undefined) {
+          workerIdInput.value = String(payload.workerId);
+        }
+      }
+
+      async function startMic() {
+        if (!channel || channel.readyState !== "open") {
+          throw new Error("WebRTC data channel is not open.");
+        }
+
+        mediaStream = await navigator.mediaDevices.getUserMedia({
+          audio: {
+            channelCount: CHANNELS,
+            sampleRate: SAMPLE_RATE,
+            echoCancellation: false,
+            noiseSuppression: false,
+            autoGainControl: false
+          }
+        });
+
+        audioContext = new AudioContext({
+          sampleRate: SAMPLE_RATE
+        });
+        source = audioContext.createMediaStreamSource(mediaStream);
+        processor = audioContext.createScriptProcessor(4096, CHANNELS, CHANNELS);
+        processor.onaudioprocess = function (event) {
+          sendPcmBytes(floatToPcm16(event.inputBuffer.getChannelData(0)));
+        };
+        source.connect(processor);
+        processor.connect(audioContext.destination);
+
+        startMicBtn.disabled = true;
+        stopBtn.disabled = false;
+        setStatus("Streaming microphone PCM as base64 over WebRTC.");
+      }
+
+      async function stop() {
+        if (pendingByteLength > 0) {
+          var remaining = concatPendingBytes(pendingByteLength);
+          sendJson({
+            type: "pcm",
+            data: arrayBufferToBase64(remaining.buffer)
+          });
+        }
+        sendJson({
+          type: "finish"
+        });
+
+        if (processor) {
+          processor.disconnect();
+          processor.onaudioprocess = null;
+        }
+        if (source) {
+          source.disconnect();
+        }
+        if (mediaStream) {
+          mediaStream.getTracks().forEach(function (track) {
+            track.stop();
+          });
+        }
+        if (audioContext) {
+          await audioContext.close();
+        }
+
+        audioContext = null;
+        mediaStream = null;
+        processor = null;
+        source = null;
+        pendingBytes = [];
+        pendingByteLength = 0;
+        stopBtn.disabled = true;
+        startMicBtn.disabled = false;
+        setStatus("Stopped. Sent finish to Doubao peer.");
+      }
+
+      createOfferBtn.onclick = function () {
+        createOffer().catch(function (err) {
+          console.error(err);
+          setStatus(err && err.message ? err.message : String(err));
+        });
+      };
+
+      signalOfferBtn.onclick = function () {
+        signalOffer().catch(function (err) {
+          console.error(err);
+          setStatus(err && err.message ? err.message : String(err));
+        });
+      };
+
+      applyAnswerBtn.onclick = function () {
+        applyAnswer().catch(function (err) {
+          console.error(err);
+          setStatus(err && err.message ? err.message : String(err));
+        });
+      };
+
+      startMicBtn.onclick = function () {
+        startMic().catch(function (err) {
+          console.error(err);
+          setStatus(err && err.message ? err.message : String(err));
+        });
+      };
+
+      stopBtn.onclick = function () {
+        stop().catch(function (err) {
+          console.error(err);
+          setStatus(err && err.message ? err.message : String(err));
+        });
+      };
+    })();
+  </script>
+</body>
+</html>
