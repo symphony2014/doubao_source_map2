@@ -569,6 +569,8 @@
 
       async collect(session) {
         var subscription = session.subscribe();
+        var unsubscribeOnAbort = function () { if (typeof subscription.unsubscribe === "function") subscription.unsubscribe(); };
+        if (this.options.signal) this.options.signal.addEventListener("abort", unsubscribeOnAbort, { once: true });
         try {
           for await (var message of subscription) {
             try {
@@ -600,6 +602,9 @@
             this.options.onError(err);
           }
           throw err;
+        } finally {
+          if (this.options.signal) this.options.signal.removeEventListener("abort", unsubscribeOnAbort);
+          if (typeof subscription.unsubscribe === "function") subscription.unsubscribe();
         }
       }
     }
@@ -678,7 +683,12 @@
         var payloadOptions = Object.assign({}, options || {}, {
           text: text
         });
-        payloadOptions.chatId = resolveChatId(payloadOptions.chatId);
+        if (payloadOptions.newConversation) {
+          if (payloadOptions.chatId) throw new Error("newConversation cannot be combined with chatId");
+          payloadOptions.chatId = require("chat-local-conversation-creator").createLocalConversation();
+        } else {
+          payloadOptions.chatId = resolveChatId(payloadOptions.chatId);
+        }
         if (!payloadOptions.attachmentBlock && !normalizeArray(payloadOptions.attachments).length && (payloadOptions.stringAsFile || payloadOptions.paths)) {
           var uploaded = await uploadPaths(payloadOptions);
           if (uploaded) {
@@ -693,10 +703,42 @@
           throw new Error("chatIMService.sendMessage is unavailable");
         }
         var session = service.sendMessage(payload);
-        var streamResult = await new MessageStreamCollector(payloadOptions).collect(session);
+        var abortHandler;
+        var cancelWork;
+        var aborted = new Promise(function (_, reject) {
+          abortHandler = function () {
+            if (!cancelWork) cancelWork = Promise.resolve().then(function () { return session.cancel && session.cancel(); });
+            cancelWork.then(function () {
+              reject(new Error("Chat request cancelled"));
+            }, reject);
+          };
+          if (payloadOptions.signal) {
+            payloadOptions.signal.addEventListener("abort", abortHandler, { once: true });
+            if (payloadOptions.signal.aborted) abortHandler();
+          }
+        });
+        var streamResult;
+        try {
+          streamResult = await Promise.race([new MessageStreamCollector(payloadOptions).collect(session), aborted]);
+          if (payloadOptions.signal && payloadOptions.signal.aborted) {
+            await cancelWork;
+            throw new Error("Chat request cancelled");
+          }
+        } finally {
+          if (payloadOptions.signal) payloadOptions.signal.removeEventListener("abort", abortHandler);
+        }
+        var providerChatId = streamResult.message && streamResult.message.conversation_id;
+        if (!providerChatId) {
+          var feed = getDeps().chatFeedStoreFactory.useFeedStore.getState();
+          var localConversation = feed.localConversationMap && feed.localConversationMap[payloadOptions.chatId];
+          providerChatId = localConversation && localConversation.local && localConversation.local.newConversationId;
+        }
+        if (payloadOptions.newConversation && !providerChatId) throw new Error("Doubao did not resolve the new conversation ID");
+        providerChatId = providerChatId || payloadOptions.chatId || "";
         return {
           session: session,
-          chatId: payloadOptions.chatId || "",
+          chatId: providerChatId,
+          conversationId: providerChatId,
           text: streamResult.text,
           message: streamResult.message
         };
